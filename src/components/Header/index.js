@@ -1,7 +1,13 @@
 import React from "react";
 
-function Header() {
-	return <div>Header</div>;
-}
+const Header = () => {
+	return (
+		<header id="header">
+			<div className="container">
+				<h1>都道府県の人口一覧</h1>
+			</div>
+		</header>
+	);
+};
 
 export default Header;
