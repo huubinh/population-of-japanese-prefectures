@@ -3,7 +3,7 @@ import Checkbox from "../Checkbox";
 
 const Checkboxes = ({ prefectures, selectPrefecture, deselectPrefecture }) => {
 	return (
-		<section>
+		<section id="checkboxes">
 			<div className="container">
 				{prefectures.map((prefecture) => {
 					return (

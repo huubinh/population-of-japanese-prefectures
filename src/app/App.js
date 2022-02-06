@@ -67,9 +67,9 @@ const App = () => {
 			{selectedPrefs.length ? (
 				<LineChart selectedPrefs={selectedPrefs} />
 			) : (
-				<div id="container" style={{ margin: "175px", textAlign: "center" }}>
+				<h4 style={{ margin: "18px 0 0 0", textAlign: "center" }}>
 					都道府県を選択してください。
-				</div>
+				</h4>
 			)}
 			<Footer />
 		</div>
