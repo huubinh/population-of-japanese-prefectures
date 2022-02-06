@@ -1,7 +1,17 @@
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 
-const Checkbox = ({ prefecture, selectPrefecture, deselectPrefecture }) => {
+const Checkbox = ({
+	prefecture,
+	selectedPrefs,
+	selectPrefecture,
+	deselectPrefecture,
+}) => {
 	const [checked, setChecked] = useState(false);
+
+	useEffect(
+		() => selectedPrefs.length === 0 && setChecked(false),
+		[selectedPrefs]
+	);
 
 	return (
 		<label className="checkbox">

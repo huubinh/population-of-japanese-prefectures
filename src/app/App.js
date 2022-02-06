@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "../components/Header";
 import Checkboxes from "../components/Checkboxes";
 import LineChart from "../components/LineChart";
@@ -54,21 +54,34 @@ const App = () => {
 		);
 	};
 
+	const reset = () => {
+		setSelectedPrefs([]);
+	};
+
 	return (
 		<div>
 			<Header />
-			{prefectures && (
+			{prefectures.length !== 0 && (
 				<Checkboxes
 					prefectures={prefectures}
+					selectedPrefs={selectedPrefs}
 					selectPrefecture={selectPrefecture}
 					deselectPrefecture={deselectPrefecture}
+					reset={reset}
 				/>
 			)}
-			{selectedPrefs.length ? (
-				<LineChart selectedPrefs={selectedPrefs} />
+
+			{prefectures.length !== 0 ? (
+				selectedPrefs.length !== 0 ? (
+					<LineChart selectedPrefs={selectedPrefs} />
+				) : (
+					<h4 style={{ margin: "18px 0 0 0", textAlign: "center" }}>
+						都道府県を選択してください。
+					</h4>
+				)
 			) : (
 				<h4 style={{ margin: "18px 0 0 0", textAlign: "center" }}>
-					都道府県を選択してください。
+					ローディングデータ。。。
 				</h4>
 			)}
 			<Footer />

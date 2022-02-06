@@ -1,22 +1,31 @@
 import React from "react";
 import Checkbox from "../Checkbox";
+import ResetButton from "../ResetButton";
 
-const Checkboxes = ({ prefectures, selectPrefecture, deselectPrefecture }) => {
+const Checkboxes = ({
+	prefectures,
+	selectedPrefs,
+	selectPrefecture,
+	deselectPrefecture,
+	reset,
+}) => {
 	return (
-		<section id="checkboxes">
-			<div className="container">
+		<div className="container">
+			<section id="checkboxes">
 				{prefectures.map((prefecture) => {
 					return (
 						<Checkbox
 							key={prefecture.prefCode}
 							prefecture={prefecture}
+							selectedPrefs={selectedPrefs}
 							selectPrefecture={selectPrefecture}
 							deselectPrefecture={deselectPrefecture}
 						/>
 					);
 				})}
-			</div>
-		</section>
+				<ResetButton reset={reset} />
+			</section>
+		</div>
 	);
 };
 

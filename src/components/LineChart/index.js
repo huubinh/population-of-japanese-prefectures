@@ -21,15 +21,16 @@ const LineChart = ({ selectedPrefs }) => {
 	});
 	const options = {
 		colors: [
-			"#058DC7",
-			"#50B432",
-			"#ED561B",
-			"#DDDF00",
-			"#24CBE5",
-			"#64E572",
-			"#FF9655",
-			"#FFF263",
-			"#6AF9C4",
+			"#058dc7",
+			"#50b432",
+			"#ed561b",
+			"#dddf00",
+			"#24cbe5",
+			"#64e572",
+			"#ff9655",
+			"#fff263",
+			"#6af9c4",
+			"#6664e6",
 		],
 
 		chart: {
@@ -93,16 +94,38 @@ const LineChart = ({ selectedPrefs }) => {
 						},
 					},
 				},
+				{
+					condition: {
+						maxWidth: 690,
+					},
+					chartOptions: {
+						legend: {
+							itemStyle: {
+								fontSize: "16px",
+							},
+						},
+						yAxis: {
+							title: {
+								text: "",
+							},
+						},
+						xAxis: {
+							title: {
+								text: "",
+							},
+						},
+					},
+				},
 			],
 		},
 	};
 
 	return (
-		<section id="line-chart">
-			<div className="container">
+		<div className="container">
+			<section id="line-chart">
 				<HighchartsReact highcharts={Highcharts} options={options} />
-			</div>
-		</section>
+			</section>
+		</div>
 	);
 };
 
