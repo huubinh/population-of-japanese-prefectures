@@ -1,192 +1,222 @@
 body {
-	font-family: "Zen Maru Gothic", sans-serif;
-	color: #f5f5f5;
-	background-color: #333;
+  font-family: 'Zen Maru Gothic', sans-serif;
+  color: #f5f5f5;
+  background-color: #262626;
 }
 
 h1 {
-	font-weight: normal;
-	font-size: 50px;
+  font-weight: normal;
+  font-size: 50px;
 }
 
 h4 {
-	font-weight: normal;
-	font-size: 25px;
+  font-weight: normal;
+  font-size: 25px;
 }
 
 h6 {
-	font-weight: normal;
-	font-size: 15px;
+  font-weight: normal;
+  font-size: 15px;
 }
 
-#header {
-	text-align: center;
+.header {
+  text-align: center;
 }
 
 .container {
-	width: 80%;
-	margin: auto;
+  width: 80%;
+  margin: auto;
 }
 
-#checkboxes {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
+.checkboxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .checkbox {
-	position: relative;
-	display: inline-block;
-	padding-left: 35px;
-	margin-bottom: 15px;
-	margin-left: 30px;
-	width: 110px;
-	font-size: 21px;
-	user-select: none;
+  position: relative;
+  display: inline-block;
+  padding-left: 35px;
+  margin-bottom: 15px;
+  margin-left: 30px;
+  width: 110px;
+  font-size: 21px;
+  user-select: none;
 }
 
 .checkbox input {
-	position: absolute;
-	opacity: 0;
-	cursor: pointer;
-	height: 0;
-	width: 0;
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
 }
 
 .checkmark {
-	position: absolute;
-	top: 13%;
-	left: 0;
-	height: 22px;
-	width: 22px;
-	background-color: transparent;
-	border: solid 2px #f5f5f5;
-	border-radius: 7px;
+  position: absolute;
+  top: 13%;
+  left: 0;
+  height: 22px;
+  width: 22px;
+  background-color: transparent;
+  border: solid 2px #f5f5f5;
+  border-radius: 8px;
+}
+
+.checkbox input:focus-visible ~ .checkmark {
+  background-color: #666;
+  border: solid 3px;
+  margin-left: -1.5px;
 }
 
 .checkbox:hover input ~ .checkmark {
-	background-color: #666;
+  background-color: #666;
+  border: solid 3px;
+  margin-left: -1.5px;
 }
 
 .checkbox input:checked ~ .checkmark {
-	background-color: #349d63;
+  background-color: #409580;
 }
 
 .checkmark:after {
-	content: "";
-	position: absolute;
-	display: none;
+  content: '';
+  position: absolute;
+  display: none;
 }
 
 .checkbox input:checked ~ .checkmark:after {
-	display: inline-block;
+  display: inline-block;
 }
 
 .checkbox .checkmark:after {
-	left: 7px;
-	top: 3px;
-	width: 5px;
-	height: 10px;
-	border: solid #f5f5f5;
-	border-width: 0 3px 3px 0;
-	transform: rotate(45deg);
+  left: 7px;
+  top: 3px;
+  width: 5px;
+  height: 10px;
+  border: solid #f5f5f5;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
 }
 
-#reset-container {
-	position: relative;
-	display: inline-block;
-	padding-left: 35px;
-	margin-bottom: 15px;
-	margin-left: 30px;
-	width: 110px;
-	font-size: 21px;
-	user-select: none;
+.reset-container {
+  position: relative;
+  display: inline-block;
+  padding-left: 35px;
+  margin-bottom: 15px;
+  margin-left: 30px;
+  width: 110px;
+  font-size: 21px;
+  user-select: none;
 }
 
-#reset-button {
-	margin: 0 4.5px 0 -35px;
-	height: 26px;
-	width: 26px;
-	background-color: transparent;
-	border: solid 2px #f5f5f5;
-	border-radius: 7px;
+.reset-button {
+  margin: 0 4.5px 0 -35px;
+  height: 26px;
+  width: 26px;
+  background-color: transparent;
+  border: solid 2px #f5f5f5;
+  border-radius: 8px;
 }
 
-#reset-button:hover {
-	background: linear-gradient(
-			to bottom,
-			transparent 35%,
-			#f03714 35%,
-			#f03714 65%,
-			transparent 65%
-		),
-		linear-gradient(
-			to right,
-			transparent 35%,
-			#f03714 35%,
-			#f03714 65%,
-			transparent 65%
-		);
-	transform: rotate(45deg);
+.reset-button:focus-visible {
+  background: linear-gradient(to bottom, transparent 35%, #ff4c29 35%, #ff4c29 65%, transparent 65%),
+    linear-gradient(to right, transparent 35%, #ff4c29 35%, #ff4c29 65%, transparent 65%);
+  transform: rotate(45deg);
+  outline: none;
+  border: solid #f5f5f5 3px;
 }
 
-#line-chart {
-	margin-top: 50px;
+.reset-button:hover {
+  background: linear-gradient(to bottom, transparent 35%, #ff4c29 35%, #ff4c29 65%, transparent 65%),
+    linear-gradient(to right, transparent 35%, #ff4c29 35%, #ff4c29 65%, transparent 65%);
+  transform: rotate(45deg);
+  border: solid #f5f5f5 3px;
 }
 
-#footer {
-	text-align: center;
-	display: flex;
-	flex-direction: column;
+.loading {
+  position: absolute;
+  top: 13%;
+  left: 0;
+  height: 22px;
+  width: 22px;
+  background-color: transparent;
+  border: solid 2px #f5f5f5;
+  border-radius: 7px;
+  animation-name: load;
+  animation-duration: 1s;
 }
-#footer h6 {
-	margin-bottom: auto;
+@keyframes load {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(180deg);
+  }
+}
+
+.line-chart {
+  margin-top: 50px;
+}
+
+.footer {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+.footer h6 {
+  margin-bottom: auto;
 }
 
 @media (max-width: 860px) {
-	#line-chart {
-		margin-left: -3.5%;
-	}
+  .line-chart {
+    margin-left: -3.5%;
+  }
 }
 
 @media (max-width: 690px) {
-	h1 {
-		font-size: 25px;
-	}
-	h4 {
-		font-size: 16px;
-	}
-	h6 {
-		font-size: 12px;
-	}
-	.container {
-		width: 90%;
-	}
-	.checkbox {
-		padding-left: 28px;
-		margin-left: 12px;
-		width: 72px;
-		font-size: 16px;
-	}
-	.checkmark {
-		height: 16px;
-		width: 16px;
-	}
-	.checkbox .checkmark:after {
-		left: 4.3px;
-		top: 1px;
-		width: 4px;
-		height: 8px;
-	}
-	#reset-container {
-		padding-left: 28px;
-		margin-left: 12px;
-		width: 72px;
-		font-size: 16px;
-	}
-	#reset-button {
-		margin-left: -28px;
-		height: 20px;
-		width: 20px;
-	}
+  h1 {
+    font-size: 25px;
+  }
+  h4 {
+    font-size: 16px;
+  }
+  h6 {
+    font-size: 12px;
+  }
+  .container {
+    width: 90%;
+  }
+  .checkbox {
+    padding-left: 28px;
+    margin-left: 12px;
+    width: 72px;
+    font-size: 16px;
+  }
+  .checkmark {
+    height: 16px;
+    width: 16px;
+  }
+  .checkbox .checkmark:after {
+    left: 4.3px;
+    top: 1px;
+    width: 4px;
+    height: 8px;
+  }
+  .reset-container {
+    padding-left: 28px;
+    margin-left: 12px;
+    width: 72px;
+    font-size: 16px;
+  }
+  .reset-button {
+    margin-left: -28px;
+    height: 20px;
+    width: 20px;
+  }
+  .loading {
+    height: 16px;
+    width: 16px;
+  }
 }
